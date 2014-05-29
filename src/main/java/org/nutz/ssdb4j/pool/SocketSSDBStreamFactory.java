@@ -16,11 +16,11 @@ public class SocketSSDBStreamFactory extends BasePoolableObjectFactory<SSDBStrea
 		this.port = port;
 		this.timeout = timeout;
 	}
-	
+	@Override
 	public SSDBStream makeObject() throws Exception {
 		return new SocketSSDBStream(host, port, timeout);
 	}
-
+	@Override
 	public boolean validateObject(SSDBStream stream) {
 		try {
 			return stream.req(Cmd.ping).ok();

@@ -22,7 +22,8 @@ public class SocketSSDBStream extends AbstractIoSSDBStream {
 		this.port = port;
 		this.timeout = timeout;
 	}
-
+	
+	@Override
 	protected void beforeExec() {
 		if (!socket.isConnected()) {
 			try {
